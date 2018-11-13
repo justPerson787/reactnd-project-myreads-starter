@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Book from './Book.js'
+import Bookshelf from './Bookshelf.js'
 
 class BooksApp extends React.Component {
   state = {
@@ -14,16 +15,6 @@ class BooksApp extends React.Component {
      */
     showSearchPage: false
   }
-
-  /*load = () => {
-
-    BooksAPI.getAll().then((books) => {
-
-      this.setState({ books })
-
-    })
-  }
-  this.load()*/
 
   render() {
     return (
@@ -56,34 +47,9 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Currently Reading</h2>
-                  <div className="bookshelf-books">
-                    <ol className="books-grid">
-                      <Book/>
-                      <Book/>
-                    </ol>
-                  </div>
-                </div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Want to Read</h2>
-                  <div className="bookshelf-books">
-                    <ol className="books-grid">
-                      <Book/>                    
-                      <Book/>
-                    </ol>
-                  </div>
-                </div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Read</h2>
-                  <div className="bookshelf-books">
-                    <ol className="books-grid">
-                      <Book/>
-                      <Book/>
-                      <Book/>
-                    </ol>
-                  </div>
-                </div>
+                <Bookshelf/>
+                <Bookshelf/>
+                <Bookshelf/>
               </div>
             </div>
             <div className="open-search">
