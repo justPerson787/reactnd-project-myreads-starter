@@ -9,6 +9,7 @@ class Bookshelf extends Component {
         onDeleteContact: PropTypes.func.isRequired
       }*/
     render() {
+        /*const { books } = this.props.books*/
         return (
             <div className="bookshelf">
                 <h2 className="bookshelf-title">Shelf name</h2>

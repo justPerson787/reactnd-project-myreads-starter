@@ -23,6 +23,13 @@ class BooksApp extends React.Component {
     })
   }
   
+  /*updateShelf method from `BooksAPI.js`(a backend server)*/ 
+  updateShelf = (book, shelf) =>  {
+    BooksAPI.update(book, shelf).then(() => {
+      this.fetchBooks();
+    });
+  }
+
   render() {
     return (
       <div className="app">
@@ -49,7 +56,7 @@ class BooksApp extends React.Component {
           </div>
         ) : (        
           <div> 
-            <Listbooks/>
+            <Listbooks books={this.state.books}/>
           </div>
                       
         )}

@@ -9,6 +9,7 @@ class Book extends Component {
       }*/
 
     render() {
+       /*const { books } = this.props.books*/
        return(
         <li> {/*probably li to be removed*/}
             <div className="book">
@@ -24,8 +25,8 @@ class Book extends Component {
                         </select>
                     </div>
                 </div>
-                <div className="book-title">title goes here</div>
-                <div className="book-authors">props.book.author</div>
+                <div className="book-title">this.props.books.title</div>
+                <div className="book-authors">props.book.authors</div>
             </div>
         </li>
        )
