@@ -8,6 +8,9 @@ class Listbooks extends Component {
         contacts: PropTypes.array.isRequired,
         onDeleteContact: PropTypes.func.isRequired
       }*/
+    /*state = {
+        showSearchPage: false
+    }*/
     render() {
         return (
             <div className="list-books">

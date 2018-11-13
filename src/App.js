@@ -16,6 +16,13 @@ class BooksApp extends React.Component {
     showSearchPage: false
   }
 
+  componentDidMount() {
+    BooksAPI.getAll().then((books) => {
+      this.setState({ books })
+      console.log(books)
+    })
+  }
+  
   render() {
     return (
       <div className="app">
@@ -41,10 +48,10 @@ class BooksApp extends React.Component {
             </div>
           </div>
         ) : (        
-          <div>
+          <div> 
             <Listbooks/>
           </div>
-            
+                      
         )}
         </div>
     )
