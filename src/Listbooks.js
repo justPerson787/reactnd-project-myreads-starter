@@ -10,6 +10,12 @@ class Listbooks extends Component {
     }
     
     render() {
+        const shelves = {
+            1:["wantToRead", 'Want to Read'], 
+            2:["currentlyReading", "Currently Reading"],
+            3:["read", 'Read'],
+        }
+        
         return (
             <div className="list-books">
                 <div className="list-books-title">
