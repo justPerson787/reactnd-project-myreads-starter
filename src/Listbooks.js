@@ -4,13 +4,11 @@ import PropTypes from 'prop-types'
 
 class Listbooks extends Component {
     // PROPTYPES TO CHANGE
-    /*static propTypes = {
-        contacts: PropTypes.array.isRequired,
-        onDeleteContact: PropTypes.func.isRequired
-      }*/
-    /*state = {
-        showSearchPage: false
-    }*/
+    static propTypes = {
+        books: PropTypes.array.isRequired,
+        /*-onDeleteContact: PropTypes.func.isRequired*/
+    }
+    
     render() {
         return (
             <div className="list-books">
