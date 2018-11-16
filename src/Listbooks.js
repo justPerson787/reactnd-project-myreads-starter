@@ -8,13 +8,15 @@ class Listbooks extends Component {
         books: PropTypes.array.isRequired,
         /*-onDeleteContact: PropTypes.func.isRequired*/
     }
-    
+        
     render() {
-        const shelves = {
-            1:["wantToRead", 'Want to Read'], 
-            2:["currentlyReading", "Currently Reading"],
-            3:["read", 'Read'],
-        }
+        //shelves' titles go to UI, shelves id is 'shelf'property from books 
+        const shelvesTitle = ['Currently Reading', 'Want to Read', 'Read']
+
+        //this function filters  book for each shelf
+        /*const booksByShelf = shelf => {
+            return this.props.books.filter(book => shelves.id === book.shelf);
+        };*/
         
         return (
             <div className="list-books">
@@ -22,12 +24,15 @@ class Listbooks extends Component {
                     <h1>MyReads</h1>
                 </div>
                 <div className="list-books-content">
-                    <div>
-                        <Bookshelf/>
-                        <Bookshelf/>
-                        <Bookshelf/>
-                    </div>
+                    {shelvesTitle.map((shelfTitle) => 
+                        <Bookshelf 
+                            key={shelfTitle}
+                            books={this.props.books} 
+                            title={shelfTitle}                                                                                
+                        />
+                    )}
                 </div>
+                
                 <div className="open-search">
                     <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
                 </div>
@@ -35,7 +40,6 @@ class Listbooks extends Component {
         )
     }
 }
-/*Currently Reading Want to Read Read*/
 
 export default Listbooks
 

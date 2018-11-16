@@ -4,22 +4,20 @@ import PropTypes from 'prop-types'
 
 class Bookshelf extends Component {
 
-    /* PROPTYPES TO CHANGE
-    static propTypes = {
+    /*static propTypes = {
         books: PropTypes.array.isRequired
     }
     /* onDeleteContact: PropTypes.func.isRequired
       */
 
     render() {
-        /*const { books } = this.props.books*/
+        const { books } = this.props
         return (
             <div className="bookshelf">
-                <h2 className="bookshelf-title">shelfTitle</h2>
+                <h2 className="bookshelf-title">{this.props.title}</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        <Book/>
-                        <Book/>
+                        <Book />
                     </ol>
                 </div>
             </div>
@@ -29,3 +27,4 @@ class Bookshelf extends Component {
 /*Currently Reading Want to Read Read*/
 
 export default Bookshelf
+

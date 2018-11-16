@@ -10,7 +10,7 @@ class Book extends Component {
       }*/
 
     render() {
-       /*const { books } = this.props.books*/
+      
       return(
         <li> 
             <div className="book">
@@ -26,7 +26,7 @@ class Book extends Component {
                         </select>
                     </div>
                 </div>
-                <div className="book-title">this.props.book.id</div>
+                <div className="book-title">this.props.book.title</div>
                 <div className="book-authors">props.book.authors</div>
             </div>
         </li>
@@ -34,6 +34,19 @@ class Book extends Component {
     }
 }    
 
-
 export default Book
 
+/*{this.props.books.map((book) => (
+    <li key={book.id} className='contact-list-item'>
+      <div className='contact-avatar' style={{
+        backgroundImage: `url(${contact.avatarURL})`
+      }}/>
+      <div className='contact-details'>
+        <p>{contact.name}</p>
+        <p>{contact.email}</p>
+      </div>
+      <button className='contact-remove'>
+        Remove
+      </button>
+    </li>
+  ))}*/
