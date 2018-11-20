@@ -12,19 +12,32 @@ class Bookshelf extends Component {
 
     render() {
         const { books } = this.props
+                
+        /*const c = books.filter((book) => book.shelf === shelfeName)*/
+        //console.log(books)
+        
+        
         return (
             <div className="bookshelf">
                 <h2 className="bookshelf-title">{this.props.title}</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        <Book />
+                        {books.filter(book => book.shelf === 'read').map((book, key) => <Book updateBook={this.props.updateBook} book={book} key={key} />)
+                        }                      
+                     {/*   <Book 
+                                /*key={key}
+                                book={book} 
+                                shelfeName = {shelfeName}
+
+                     />*/}
                     </ol>
                 </div>
             </div>
         )
     }
 }
-/*Currently Reading Want to Read Read*/
 
 export default Bookshelf
 
+/*{books.filter(book => book.shelf === this.props.shelf).map((book, index) => (<Book book={book} key={index} onUpdateShelf={this.props.onUpdateShelf}/>))}
+          </ol>*/

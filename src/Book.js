@@ -36,17 +36,3 @@ class Book extends Component {
 
 export default Book
 
-/*{this.props.books.map((book) => (
-    <li key={book.id} className='contact-list-item'>
-      <div className='contact-avatar' style={{
-        backgroundImage: `url(${contact.avatarURL})`
-      }}/>
-      <div className='contact-details'>
-        <p>{contact.name}</p>
-        <p>{contact.email}</p>
-      </div>
-      <button className='contact-remove'>
-        Remove
-      </button>
-    </li>
-  ))}*/
