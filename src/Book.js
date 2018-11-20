@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-//import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 class Book extends Component {
-    // PROPTYPES TO CHANGE
-    /*static propTypes = {
-        contacts: PropTypes.array.isRequired,
-        onDeleteContact: PropTypes.func.isRequired
-      }*/
+    
+    static propTypes = {
+        book: PropTypes.object.isRequired,
+       // onDeleteContact: PropTypes.func.isRequired
+    }
 
     render() {
 
