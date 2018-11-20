@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 class Bookshelf extends Component {
 
-    /*static propTypes = {
+    static propTypes = {
         books: PropTypes.array.isRequired
     }
     /* onDeleteContact: PropTypes.func.isRequired
@@ -12,10 +12,7 @@ class Bookshelf extends Component {
 
     render() {
         const { books } = this.props
-        const name= ['currentlyReading', 'wantToRead', 'read']
-    
-        //console.log(books)
-        
+        const name= ['currentlyReading', 'wantToRead', 'read']              
         
         return (
             <div className="bookshelf">
@@ -24,12 +21,11 @@ class Bookshelf extends Component {
                     <ol className="books-grid">
                         {books.filter(book => book.shelf === this.props.shelfKey).map((book, key) => 
                         <Book 
-                            updateBook={this.props.updateBook} 
+                            updateBook={this.props.updateBook} //Add this function
                             book={book} 
                             key={key} 
                         />)
                         }                      
-                    
                     </ol>
                 </div>
             </div>
@@ -39,5 +35,3 @@ class Bookshelf extends Component {
 
 export default Bookshelf
 
-/*{books.filter(book => book.shelf === this.props.shelf).map((book, index) => (<Book book={book} key={index} onUpdateShelf={this.props.onUpdateShelf}/>))}
-          </ol>*/

@@ -10,14 +10,9 @@ class Listbooks extends Component {
     }
         
     render() {
-        //shelves' titles go to UI, shelves id is 'shelf'property from books 
+        //shelves[0] titles go to UI, shelves[1] resemble 'shelf'property of books 
         const shelves = [['Currently Reading', 'currentlyReading'], ['Want to Read', 'wantToRead'], ['Read', 'read']]
-        
-        //this function filters  book for each shelf
-        /*const booksByShelf = shelf => {
-            return this.props.books.filter(book => shelves.id === book.shelf);
-        };*/
-        
+                     
         return (
             <div className="list-books">
                 <div className="list-books-title">
@@ -30,7 +25,6 @@ class Listbooks extends Component {
                             books={this.props.books} 
                             title={item[0]} 
                             shelfKey = {item[1]}
-
                         />
                     )}
                 </div>
