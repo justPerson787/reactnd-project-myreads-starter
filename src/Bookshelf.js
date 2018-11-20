@@ -11,8 +11,7 @@ class Bookshelf extends Component {
       */
 
     render() {
-        const { books } = this.props
-        const name= ['currentlyReading', 'wantToRead', 'read']              
+        const { books } = this.props                 
         
         return (
             <div className="bookshelf">
