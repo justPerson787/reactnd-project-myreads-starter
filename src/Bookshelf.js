@@ -12,8 +12,8 @@ class Bookshelf extends Component {
 
     render() {
         const { books } = this.props
-                
-        /*const c = books.filter((book) => book.shelf === shelfeName)*/
+        const name= ['currentlyReading', 'wantToRead', 'read']
+    
         //console.log(books)
         
         
@@ -22,14 +22,14 @@ class Bookshelf extends Component {
                 <h2 className="bookshelf-title">{this.props.title}</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        {books.filter(book => book.shelf === 'read').map((book, key) => <Book updateBook={this.props.updateBook} book={book} key={key} />)
+                        {books.filter(book => book.shelf === this.props.shelfKey).map((book, key) => 
+                        <Book 
+                            updateBook={this.props.updateBook} 
+                            book={book} 
+                            key={key} 
+                        />)
                         }                      
-                     {/*   <Book 
-                                /*key={key}
-                                book={book} 
-                                shelfeName = {shelfeName}
-
-                     />*/}
+                    
                     </ol>
                 </div>
             </div>
