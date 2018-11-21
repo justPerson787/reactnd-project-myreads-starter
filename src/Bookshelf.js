@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import Book from './Book.js'
 import PropTypes from 'prop-types'
+import { update } from './BooksAPI.js';
 
 class Bookshelf extends Component {
 
     static propTypes = {
-        books: PropTypes.array.isRequired
+        books: PropTypes.array.isRequired,
+        updateBook: PropTypes.func.isRequired
     }
-    /* onDeleteContact: PropTypes.func.isRequired
-      */
-
+    
     render() {
         const { books } = this.props                 
         
@@ -20,7 +20,7 @@ class Bookshelf extends Component {
                     <ol className="books-grid">
                         {books.filter(book => book.shelf === this.props.shelfKey).map((book, key) => 
                         <Book 
-                            updateBook={this.props.updateBook} //Add this function
+                            updateBook={this.props.updateBook} 
                             book={book} 
                             key={key} 
                         />)

@@ -3,10 +3,10 @@ import Bookshelf from './Bookshelf.js'
 import PropTypes from 'prop-types'
 
 class Listbooks extends Component {
-    // PROPTYPES TO CHANGE
+    
     static propTypes = {
         books: PropTypes.array.isRequired,
-        /*-onDeleteContact: PropTypes.func.isRequired*/
+        updateBook: PropTypes.func.isRequired
     }
         
     render() {
@@ -25,6 +25,7 @@ class Listbooks extends Component {
                             books={this.props.books} 
                             title={item[0]} 
                             shelfKey = {item[1]}
+                            updateBook={this.props.updateBook}
                         />
                     )}
                 </div>

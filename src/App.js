@@ -16,7 +16,7 @@ class BooksApp extends React.Component {
     showSearchPage: false
   }
 
-  /*books represents the books currently in  the bookshelves*/
+  /*books represents the books currently in the bookshelves*/
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
@@ -25,13 +25,13 @@ class BooksApp extends React.Component {
   
   /*
   update method from `BooksAPI.js`(a backend server) is used
-  to update books and shelfs data
+  to update books and shelves data
   *book: `<Object>` containing at minimum an `id` attribute
   *shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  */ 
-  updateShelf = (book, shelf) =>  {
+  updateBook = (book, shelf) =>  {
     BooksAPI.update(book, shelf).then(() => {
         BooksAPI.getAll().then((books) => {
-        this.setState({ books })
+        this.setState({ books });
       })
     })
   }
@@ -64,7 +64,7 @@ class BooksApp extends React.Component {
           </div>
         ) : (        
           <div> 
-            <Listbooks books={ books }/>
+            <Listbooks books={books} updateBook = {this.updateBook}/>
           </div>
                       
         )}
