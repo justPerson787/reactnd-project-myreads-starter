@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Listbooks from './Listbooks.js'
-//import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+//import BookSearch from './BookSearch.js'
 
 class BooksApp extends React.Component {
   state = {
@@ -64,7 +65,14 @@ class BooksApp extends React.Component {
           </div>
               ) : ( */}       
           <div> 
-            <Listbooks books={books} updateBook = {this.updateBook}/>
+            {this.state.showSearchPage === false && (
+              <Listbooks books={books} updateBook = {this.updateBook}/>
+            )}
+          </div>
+          <div>
+            {this.state.showSearchPage === true && (
+          {/*  <BookSearch/>*/}
+            )}
           </div>
                       
       </div>
