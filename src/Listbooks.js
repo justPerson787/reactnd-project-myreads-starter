@@ -30,10 +30,10 @@ class Listbooks extends Component {
                         />
                     )}
                 </div>                
-                {/*<div className="open-search">
-                    <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>}
+                <div className="open-search">
+                   {/*} <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>*/}
                     <Link to="/search">Add a book</Link>
-                </div>*/}
+                </div>
             </div>           
         )
     }
