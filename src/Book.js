@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
-
 class Book extends Component {
     
     static propTypes = {
@@ -9,8 +8,12 @@ class Book extends Component {
         updateBook: PropTypes.func.isRequired
     }
 
+    authorsName = (names) => {
+        if (names.length > 0){names.join(',')};
+    }
+
     render() {
-        
+                
       return(
         <li> 
             <div className="book">
@@ -34,7 +37,10 @@ class Book extends Component {
                     </div>
                 </div>
                 <div className="book-title">{this.props.book.title}</div>
-                {/*<div className="book-authors">{this.props.book.authors.join(', ')}</div>*/}
+                <div className="book-authors" 
+                    id = {this.props.book.authors.length > 0? this.props.book.authors.join(',') : null}>                                              
+                        {this.props.book.authors.join(', ')}
+                </div>              
             </div>
         </li>
        )

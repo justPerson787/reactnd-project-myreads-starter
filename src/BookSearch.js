@@ -45,7 +45,7 @@ class BookSearch extends Component {
                 }   
             })  
         ) : (
-            this.setState({ selectedBooks: [] })
+            this.setState({ selectedBooks: [] }) //if query is empty
         );
     }    
 
