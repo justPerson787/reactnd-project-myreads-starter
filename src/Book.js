@@ -13,6 +13,12 @@ class Book extends Component {
     }
 
     render() {
+        let bookCover = this.props.book.imageLinks ? //Ternary operator to display books w/out image
+            this.props.book.imageLinks.thumbnail : ''
+
+        let bookAuthors = this.props.book.authors ? // Ternary operator to display books w/out authors
+            this.props.book.authors.join(',') : ' '
+
                 
       return(
         <li> 
@@ -21,7 +27,7 @@ class Book extends Component {
                     <div className="book-cover" style={{ 
                         width: 128, 
                         height: 188, 
-                        backgroundImage: `url(${this.props.book.imageLinks.thumbnail})` 
+                        backgroundImage: `url(${bookCover})` 
                         }}>
                     </div>
                     <div className="book-shelf-changer">
@@ -37,9 +43,8 @@ class Book extends Component {
                     </div>
                 </div>
                 <div className="book-title">{this.props.book.title}</div>
-                <div className="book-authors" 
-                    id = {this.props.book.authors.length > 0? this.props.book.authors.join(',') : null}>                                              
-                        {this.props.book.authors.join(', ')}
+                <div className="book-authors">                                              
+                    {bookAuthors}                        
                 </div>              
             </div>
         </li>
