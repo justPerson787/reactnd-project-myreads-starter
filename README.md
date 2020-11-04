@@ -1,6 +1,4 @@
-﻿## MyReads Project
-
-This project has been created as a part of the Udacity's Front End Web Developer nanodegree. A static example of the CSS and HTML markup as well as a backend server to develop against has been provided by Udacity. 
+﻿# MyReads Project
 
 ## How  to Run
 
